@@ -18,17 +18,7 @@ const SimpleLineChart = ({ data, loading }) => {
         {loading ? (
           <Spinner />
         ) : (
-          <LineChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
+          <LineChart width={500} height={300} data={data}>
             {/* CartesianGrid is used to show the grid lines in graph */}
             <CartesianGrid strokeDasharray="3 3" />
 

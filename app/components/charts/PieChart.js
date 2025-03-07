@@ -45,8 +45,8 @@ const PieChartComponent = ({ data, loading }) => {
               dataKey="amt"
               cx="50%"
               cy="50%"
-              innerRadius={120}
-              outerRadius={150}
+              innerRadius={100}
+              outerRadius={130}
               fill="#82ca9d"
               labelLine={false}
               label={renderCustomizedLabel}
