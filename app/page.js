@@ -8,11 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/components/ui/card";
-import { chartData } from "./components/charts/data";
 import SimpleBarChart from "./components/charts/SimpleBarChart";
 import StackedBarChart from "./components/charts/StackedBarChart";
 import PieChartComponent from "./components/charts/PieChart";
-import Spinner from "./components/ui/spinner";
 
 export default function Home() {
   const [chartData, setChartData] = useState([]);
@@ -36,8 +34,6 @@ export default function Home() {
       const result = await response.json();
 
       setChartData(result.chartData);
-
-      console.log("the result is", result);
     } catch (e) {
       console.log("Error while fetching data", e);
     } finally {
@@ -103,7 +99,20 @@ export default function Home() {
 //       headers: {
 //         "Content-Type": "application/json",
 //       },
-//       body: JSON.stringify({ data: chartData }),
+//       body: JSON.stringify({
+//         data: [
+//           { date: "2025-03-08", uv: 3245, pv: 1234, amt: 2890 },
+//           { date: "2025-03-09", uv: 4123, pv: 2345, amt: 3678 },
+//           { date: "2025-03-10", uv: 2987, pv: 3456, amt: 4567 },
+//           { date: "2025-03-11", uv: 4120, pv: 1890, amt: 3790 },
+//           { date: "2025-03-12", uv: 2567, pv: 4123, amt: 3123 },
+//           { date: "2025-03-13", uv: 3987, pv: 2999, amt: 4312 },
+//           { date: "2025-03-14", uv: 4356, pv: 1789, amt: 2678 },
+//           { date: "2025-03-15", uv: 2890, pv: 3450, amt: 3901 },
+//           { date: "2025-03-16", uv: 3678, pv: 2210, amt: 4000 },
+//           { date: "2025-03-17", uv: 4123, pv: 3421, amt: 3456 },
+//         ],
+//       }),
 //     });
 
 //     if (!response.ok) {

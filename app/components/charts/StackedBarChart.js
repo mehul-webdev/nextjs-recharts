@@ -30,8 +30,19 @@ const StackedBarChart = ({ data = [], loading }) => {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis
+              dataKey="date"
+              tickFormatter={(date) => {
+                const d = new Date(date);
+                return d.toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "short",
+                  year: "2-digit",
+                });
+              }}
+              tick={{ fontSize: "12px" }}
+            />
+            <YAxis tick={{ fontSize: "12px" }} />
             <Tooltip />
             <Legend />
             <Bar dataKey="pv" stackId="a" fill="#8884d8" />

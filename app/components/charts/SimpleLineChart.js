@@ -33,8 +33,19 @@ const SimpleLineChart = ({ data, loading }) => {
             <CartesianGrid strokeDasharray="3 3" />
 
             {/* Below XAxis and YAxis is used to show the x-axis and y-axis labels */}
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis
+              dataKey="date"
+              tickFormatter={(date) => {
+                const d = new Date(date);
+                return d.toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "short",
+                  year: "2-digit",
+                });
+              }}
+              tick={{ fontSize: "12px" }}
+            />
+            <YAxis tick={{ fontSize: "12px" }} />
 
             <Tooltip />
 
